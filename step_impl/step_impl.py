@@ -16,7 +16,7 @@ zap = ZAP(proxies=zap_proxy)
 
 @step("Start ZAP and Open URL <target_url>")
 def zap_open_url(target_url):
-    cmd = "/Applications/ZAP_28.app/Contents/Java/zap.sh -config api.disablekey=true -port {0}".format(
+    cmd = "/Applications/OWASPZAP.app/Contents/Java/zap.sh -daemon -config api.disablekey=true -port {0}".format(
         8090
     )
     subprocess.Popen(cmd.split(" "), stdout=open(os.devnull, "w"))
